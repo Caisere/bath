@@ -90,7 +90,7 @@ body {
 //HEADER DIRECT CHILDREN STYLE 
     & > * {
         flex: 1;
-        //flex-shrink: 1;
+        flex-shrink: 1;
         flex-basis: 1;
     } 
 
@@ -770,7 +770,6 @@ body {
     //flex-wrap: wrap;
 
     @include respond(phone) {
-        flex-wrap: wrap;
         flex-direction: column;
         //justify-content: space-between;
         align-items: center;
@@ -781,7 +780,7 @@ body {
 
     @include respond(tab-port) {
         flex-wrap: wrap;
-        //flex-direction: column; 
+        //lex-direction: column; 
     }
 
     @include respond(tab-port) {
