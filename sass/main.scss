@@ -90,7 +90,7 @@ body {
 //HEADER DIRECT CHILDREN STYLE 
     & > * {
         flex: 1;
-        flex-shrink: 1;
+        //flex-shrink: 1;
         flex-basis: 1;
     } 
 

@@ -60,7 +60,6 @@ body {
   background-color: #fff; }
   .header > * {
     flex: 1;
-    flex-shrink: 1;
     flex-basis: 1; }
   .header__left--section {
     display: flex;
