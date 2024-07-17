@@ -491,10 +491,12 @@ body {
       box-shadow: 2px 2px 6px #000; }
       @media (max-width: 600px) {
         .third__section--contents2 .card1 {
-          background-color: #011836; } }
+          background-color: #011836;
+          width: 90% !important; } }
       @media (max-width: 56.25em) {
         .third__section--contents2 .card1 {
-          width: 80%; } }
+          width: 80%;
+          background-color: #011836; } }
       .third__section--contents2 .card1 i, .third__section--contents2 .card1 h1, .third__section--contents2 .card1 p {
         background-color: transparent; }
       .third__section--contents2 .card1 i {
@@ -516,7 +518,8 @@ body {
             color: #e56d05; } }
         @media (max-width: 56.25em) {
           .third__section--contents2 .card1 h1 {
-            font-size: 1.6rem; } }
+            font-size: 1.6rem;
+            color: #e56d05; } }
       .third__section--contents2 .card1 p {
         font-size: 1.5rem;
         line-height: 1.6; }
@@ -528,7 +531,8 @@ body {
         @media (max-width: 56.25em) {
           .third__section--contents2 .card1 p {
             font-size: 1.3rem;
-            width: 100%; } }
+            width: 100%;
+            color: #ebedf0; } }
 
 .fourth__section {
   display: flex;
@@ -538,8 +542,7 @@ body {
   margin: 20px auto;
   align-items: center;
   justify-content: center;
-  width: 90%;
-  height: 100vh; }
+  width: 90%; }
   @media (max-width: 600px) {
     .fourth__section {
       flex-direction: column;
@@ -549,10 +552,9 @@ body {
       gap: 4rem; } }
   @media (max-width: 56.25em) {
     .fourth__section {
-      flex-wrap: wrap; } }
-  @media (max-width: 56.25em) {
-    .fourth__section {
-      gap: 4rem; } }
+      flex-direction: column;
+      gap: 4rem;
+      margin: 50px auto; } }
   .fourth__section--contents1 img {
     display: block;
     width: 60%;
@@ -832,8 +834,11 @@ body {
       box-shadow: 2px 2px 6px #000; }
       @media (max-width: 600px) {
         .sixth__section--imgCon-1 {
-          width: 100%;
+          width: 80%;
           height: 100%; } }
+      @media (max-width: 600px) {
+        .sixth__section--imgCon-1 {
+          width: 80%; } }
       .sixth__section--imgCon-1 img {
         width: 100%;
         object-fit: cover;
@@ -1051,6 +1056,9 @@ body {
       gap: 3rem;
       width: 100%;
       margin-bottom: 20px; } }
+  @media (max-width: 56.25em) {
+    .eight__section {
+      margin-bottom: 50px; } }
   .eight__section--content1 {
     display: flex;
     flex-direction: column;
