@@ -819,7 +819,7 @@ body {
   @media (max-width: 600px) {
     .fifth__section {
       padding: 2.5rem 7rem;
-      margin-bottom: 50px;
+      margin-bottom: 100px;
       gap: 1.5rem; } }
   @media (max-width: 56.25em) {
     .fifth__section {
@@ -1443,7 +1443,7 @@ body {
   flex-direction: column; }
   @media (max-width: 600px) {
     .footer {
-      margin-top: 70px; } }
+      margin-top: 100px; } }
   .footer__section1 {
     display: flex;
     justify-content: space-between;
