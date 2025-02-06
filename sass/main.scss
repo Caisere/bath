@@ -25,7 +25,7 @@ $primary-color-yellow: #f3d157;
 $default-font-size: 1.6rem;
 
 // Default Padding
-$default-padding: 2.5rem 5rem;
+$default-padding: 2rem 5rem;
 $default-padding-phone: 2.5rem 7rem;
 
 
@@ -45,16 +45,18 @@ html {
         font-size: 56.25;
     }
      //Let the font size be 8px. (8px/16px) * 100% = 50%
-     @include respond(tab-port) {
+    @include respond(tab-port) {
         font-size: 50%;           
     }
     //@include respond(phone) {
       //  font-size: 35%;
     //}
       //Let the font size be 12px. (12px/16px) * 100% = 75%
-      @include respond(big-desktop) {
+    @include respond(big-desktop) {
         font-size: 75%;
     }
+
+    scroll-behavior: smooth;
 
 }
 
@@ -69,9 +71,13 @@ body {
     background-color: $primary-gray-color;
     //overflow-x: hidden;
     box-sizing: border-box;
-  
+    font-family: Lato;
+    position: relative;
 }
 
+// header:has(.close) .header__middle--section {
+//     right: -200px;
+// }
 
 .header {
     padding: $default-padding;
@@ -96,6 +102,7 @@ body {
 
 //HEADER LEFT SECTION STYLE 
     &__left--section {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 1px;
@@ -121,16 +128,39 @@ body {
             }
         }
     }
+
+    // &__middle--section {
+
+    //     @include respond(phone) {
+    //         padding: 1rem;
+    //         width: 30%;
+    //         border: 1px solid;
+    //         background-color: $primary-color;
+    //         position: fixed;
+    //         // color: $secondary-color;
+    //         gap: 4rem;
+    //         top: 0;
+    //         right: 0;
+    //         bottom: 0;
+    //         z-index: 9999;
+    //     }
+    // }
 //HEADER MIDDLE SECTION STYLE
     &__middle--section ul {
         display: flex;
         justify-content: space-between;
         text-align: center;
+        align-items: center;
+        flex: 1;
+        
+        @include respond(phone) {
+            display: none;
+            // flex-direction: column;
+            // justify-content: flex-start;
+            // align-items: center;
+            // gap: 4rem;
+        }
 
-            @include respond(phone) {
-                display: none;
-            }
-    
         li {
             list-style: none;
             
@@ -143,11 +173,26 @@ body {
                 text-decoration: none;
                 font-size: 1.8rem;
 
+                @include respond(phone) {
+                    color: inherit;
+                }
+
                 @include respond(tab-port) {
                     font-size: 1.3rem;         
                 }
             }
         }
+    }
+
+    &__middle--section .close {
+        display: none;
+
+        @include respond(phone) {
+            display: block;
+            color: $secondary-color;
+            cursor: pointer;
+        }
+    
     }
 
     &__middle--section .active {
@@ -181,10 +226,25 @@ body {
                 font-size: .8rem;
                 padding: 1.2rem 2.4rem;         
             }
-           
+        }
+    }
+
+    &__ham--section {
+        display: none;
+
+        @include respond(phone) {
+            display: block;
+            text-align: end;
+            font-size: 2.5rem;
+            color: $secondary-color;
+            cursor: pointer;
         }
     }
 }
+
+// .show {
+//     right: -10%;
+// }
 
 @keyframes moveInLeft {
     0% {
@@ -192,15 +252,32 @@ body {
         transform: translateX(-5rem);
     }
     
-    80% {
+    /*80% {
         transform: translateX(5rem);
-    }
+    }*/
 
     100% { 
         opacity: 1;
         transform: translate(0);
     }
 }
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    
+    /*80% {
+        transform: translateX(-5rem);
+    }*/
+
+    100% { 
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 
 @keyframes displayOnScroll {
     from {
@@ -318,6 +395,7 @@ body {
         display: flex;
         position: relative;
         width: auto;
+        animation: moveInRight 2s ease-in-out;
 
         @include respond(phone) {
             flex: 1;
@@ -359,17 +437,20 @@ body {
     top: 60px;
     background-color: $primary-color-white;
 
-    @include respond(phone) {
-        top: 30px;
-        left: -30px;
-        padding: .6rem .9rem;
-    }
 
     @include respond(tab-port) {
         top: 20px;
         left: -30px;
         padding: .6rem .8rem;
     }
+
+
+    @include respond(phone) {
+        top: 30px;
+        left: -30px;
+        padding: .6rem .9rem;
+    }
+
 
 
     &--cl {
@@ -571,8 +652,35 @@ body {
 } 
 //SECOND SECTION STYLES
 
+@keyframes scrollLeft {
+    from {
+
+    }
+
+    to {
+        left: -1440px;
+    }
+}
+
+.item1 {
+    animation-delay: calc(20s / 4 * (4 - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc(20s / 4 * (4 - 2) * -1);
+}
+
+.item3 {
+    animation-delay: calc(20s / 4 * (4 - 3) * -1);
+}
+
+.item4 {
+    animation-delay: calc(20s / 4 * (4 - 4) * -1);
+}
+
 .second__section {
     background-color: $primary-color;
+    margin-inline: auto;
     margin: 50px auto;
     height: 50px;
     padding: 3rem 6rem;
@@ -580,6 +688,9 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    
 
     @include respond(phone) {
         gap: 1.3rem;
@@ -595,7 +706,13 @@ body {
     &--contents {
         display: flex;
         background-color: transparent;
-        width: 100%;
+        width: 300px;
+        position: absolute;
+        left: 1440px;
+        animation-name: scrollLeft;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
         
            
         &-1 {
@@ -615,7 +732,7 @@ body {
             i {
                 background-color: transparent;
                 color: $primary-gray-color;
-                font-size: 1.4rem;
+                font-size: 1.8rem;
 
                 @include respond(phone) {
                     font-size: .6rem;
@@ -1232,21 +1349,21 @@ body {
         @include respond(tab-port) {
             //flex-wrap: wrap;
             flex-direction: column;
-          }
+        }
 
         .scroll {
             font-size: 3rem;
             color: $primary-gray-color-dark;
 
             @include respond(phone) {
-               display: none;
+                display: none;
             }
 
             @include respond(tab-port) {
                 display: none;
-             }
+            }
         }
-     
+
         &-1 {
             width: 500px;
             height: 470px;
@@ -1262,18 +1379,16 @@ body {
                 width: 100%;
                 //height: 100%;
             }
-    
             
-
-           img {
+            img {
             width: 100%;
             object-fit: cover;
             object-position: top;
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
-           }
-
-           &-ctx {
+            }
+        
+        &-ctx {
             display: flex;
             gap: 3rem;
             padding: 2rem 1.6rem;
@@ -1352,8 +1467,7 @@ body {
                 }
 
             }
-           }
-          
+        }
         }
     }
 }
@@ -1677,6 +1791,10 @@ body {
     }
 }
 
+.hide {
+    display: none;
+}
+
 .eight__section--content2-1:hover {
     border-left: 2px solid $secondary-color;
 }
@@ -1689,8 +1807,10 @@ body {
     padding: $default-padding;
     gap: 2rem;
     align-items: center;
+    justify-content: center;
     width: 80%;
-    margin-top: 50px;
+    margin-block: 20px;
+    height: 100vh;
     //flex-wrap: wrap;
 
     @include respond(phone) {
@@ -1699,21 +1819,21 @@ body {
         width: 100%;
         justify-content: center;
         padding: $default-padding-phone;
-        margin-top: 0;
+        margin-bottom: 50px;
     }
 
     @include respond(tab-port) {
         flex-direction: column;
         gap: 6rem;
         //flex-wrap: wrap;
-      }
+    }
 
     &--content1 {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         align-items: start;
-        //flex: 1;
+        flex: 1;
         justify-content: center;
         padding: 0 3rem;
 
@@ -1798,18 +1918,21 @@ body {
         gap: 3.5rem;
         box-shadow: 2px 2px 6px $tertiary-color;
         width: 100%;
+        // height: 80vh;
         padding: 3rem;
+        flex: 1;
+        border-radius: 10px;
 
         @include respond(phone) {
-           width: 90%;
-           //padding: rem;
-           gap: 2.5rem;
+            width: 90%;
+            //padding: rem;
+            gap: 2.5rem;
         }
 
         @include respond(tab-port) {
-           width: 90%;
-           border-radius: 15px;
-           gap: 3.0rem;
+            width: 90%;
+            border-radius: 15px;
+            gap: 3.0rem;
         }
         
 
@@ -1829,70 +1952,26 @@ body {
             }
         }
 
-        &-formCon {
+        form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             padding: auto;
-            //width: 100%;
+            width: 100%;
 
-        }
-
-        &-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            //align-items: center;
-
-
-            h3 {
-                font-size: 1.2rem;
-
-                @include respond(phone) {
-                    font-size: .9rem;
-                }
-
-                @include respond(tab-port) {
-                    font-size: 1.1rem;
-                }
-            }
-
-           input,
-            textarea {
-                width: 90%;
-                padding: 2rem;
-                border: none;
-                background-color: $primary-gray-color-light-dark;
-                border-radius: 30px;
-                margin: auto;
-
-                @include respond(phone) {
-                    width: 100%;
-                    padding: 1rem;
-                    margin: auto;
-                }
-            } 
-        }
-
-        &--send {
-            background-color: transparent;
-            margin: auto;
-            margin-top: 20px;
-            
-    
-            :hover {
-                background-color: $secondary-color-dark;
-            }
-    
-            a {
+            button {
                 text-decoration: none;
                 font-size: 1.2rem;
                 background-color: $secondary-color;
-                padding: 1.4rem 2.8rem;
+                padding: 1rem 3rem;
                 border-radius: 20px;
+                border: none;
                 font-weight: bolder;
                 color: $primary-gray-color;
                 text-align: center;
+                width: 30%;
+                margin: 0 auto;
+                margin-top: 20px;
 
                 @include respond(phone) {
                     font-size: .9rem;
@@ -1903,7 +1982,95 @@ body {
                     font-size: 1rem;
                 }
             }
+
         }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            //align-items: center;
+
+
+            label {
+                font-size: 1.5rem;
+
+                @include respond(phone) {
+                    font-size: .9rem;
+                }
+
+                @include respond(tab-port) {
+                    font-size: 1.1rem;
+                }
+            }
+            
+            input,
+            textarea {
+                width: 100%;
+                padding: 2rem;
+                border: none;
+                outline: none;
+                background-color: $primary-gray-color-light-dark;
+                border-radius: 10px;
+                // margin: auto;
+
+                :focus{
+                    background-color: #d9e1f0;
+                }
+
+                @include respond(phone) {
+                    width: 100%;
+                    padding: 1rem;
+                    // margin: auto;
+                    border-radius: 5px;
+                }
+            } 
+
+            input:focus,
+            textarea:focus{
+                background-color: whitesmoke;
+                // border: 1px solid red;
+            }
+
+            // input:-internal-autofill-selected {
+            //     appearance: menulist-button;
+            //     background-image: none !important;
+            //     background-color: whitesmoke;
+            //     color: fieldtext !important;
+            // }
+        }
+
+        // &--send {
+        //     background-color: transparent;
+        //     margin: 0 auto;
+        //     margin-top: 20px;
+            
+    
+        //     :hover {
+        //         background-color: $secondary-color-dark;
+        //     }
+    
+        //     button {
+        //         text-decoration: none;
+        //         font-size: 1.2rem;
+        //         background-color: $secondary-color;
+        //         padding: 1rem 3rem;
+        //         border-radius: 20px;
+        //         border: none;
+        //         font-weight: bolder;
+        //         color: $primary-gray-color;
+        //         text-align: center;
+
+        //         @include respond(phone) {
+        //             font-size: .9rem;
+        //             padding: 1rem 2.2rem;
+        //         }
+
+        //         @include respond(tab-port) {
+        //             font-size: 1rem;
+        //         }
+        //     }
+        // }
     }
 
     &--content3 {
@@ -1949,6 +2116,12 @@ body {
             }
         }
     }
+}
+
+.error-message {   
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .footer {

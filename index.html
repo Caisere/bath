@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- Header Elements-->
-   <header class="header">
+    <header class="header">
         <div class="header__left--section">
             <h1>baftha</h1>
             <p>solutions</p>
@@ -23,12 +23,17 @@
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#articles">Articles</a></li>
+                <!-- <li class="close"><a href="./">Close</a></li> -->
+
+                <div class="header__right--section">
+                    <ul>
+                        <li><a href="#form">Get In Touch</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
-        <div class="header__right--section">
-            <ul>
-                <li><a href="#">Get In Touch</a></li>
-            </ul>
+        <div class="header__ham--section">
+            <span class="hamb"><i class="fa-solid fa-bars"></i></span>
         </div>
     </header>
     
@@ -42,13 +47,12 @@
                 inspire, engage, and produce results.
             </p>
             <div>
-                    <a href="#">Get In Touch</a>
+                <a href="#form">Get In Touch</a>
             </div>
         </div>
         <div class="first__section--right">
             <div>
                 <img src="images/portrait II.webp" alt="">
-
 
                 <!--FIRST SMALL CONTAINER-->
                 <div class="small__container1">
@@ -102,7 +106,7 @@
     
 <!--SECOND SECTION CONTENTS-->
     <section class="second__section">
-        <div class="second__section--contents">
+        <div class="second__section--contents item1">
             <div class="second__section--contents-1">
                 <p>Technical Expertise</p>
                 <i class="fa-solid fa-check"></i>
@@ -110,21 +114,21 @@
         </div>
 
 
-        <div class="second__section--contents">
+        <div class="second__section--contents item2">
             <div class="second__section--contents-1">
                 <p>Quality Assurance</p>
                 <i class="fa-solid fa-check"></i>
             </div>
         </div>
 
-        <div class="second__section--contents">
+        <div class="second__section--contents item3">
             <div class="second__section--contents-1">
                 <p>Innovative Solutions</p>
                 <i class="fa-solid fa-check"></i>
             </div>
         </div>
 
-        <div class="second__section--contents">
+        <div class="second__section--contents item4">
             <div class="second__section--contents-1">
                 <p>Long-term Partnerships</p>
                 <i class="fa-solid fa-check"></i>
@@ -171,7 +175,7 @@
     </section>
 
 <!--FOURTH SECTION CONTENTS-->
-    <section class="fourth__section">
+    <section class="fourth__section" id="about-us">
 
         <!--Fourth Section left contents-->
         <div class="fourth__section--contents1">
@@ -179,7 +183,7 @@
         </div>
 
         <!--Fourth section right contents-->
-        <div class="fourth__section--contents2" id="about-us">
+        <div class="fourth__section--contents2">
             <!--First Content-->
             <div class="fourth__section--contents2-1">
                 <div class="fourth__section--contents2-1-left">
@@ -231,8 +235,8 @@
     <section class="fifth__section">
         <h1>Your Journey Starts <span>Here</span>; A Path of Excellence Every Step of the Way</h1>
         <div>
-            <a href="#">Get In Touch</a>
-         </div>
+            <a href="#form">Get In Touch</a>
+        </div>
     </section>
 
     <!--SIXTH SECTION CONTENTS-->
@@ -285,8 +289,7 @@
         <div>
             <h1>What Our Clients Are Saying About <span>Baftha Solutions</span></h1>
         </div>
-       
-       
+
         <div class="seventh__section--contents1">
             <div class="scroll">
                 <i class="fa-solid fa-less-than"></i>
@@ -296,8 +299,7 @@
                     <p>"If you wish to transform your business ideas into something great, I highly
                         recommend Baftha Solutions Ltd. They provide the best consultation services".
                     </p>
-                
-               
+
                 <div class="card1__info">
                     <img src="images/img 2.jpg" alt="">
                     <div class="card1__info-cldetails">
@@ -306,7 +308,6 @@
                     </div>
                 </div>
             </div>
-           
 
             <div class="card1">
                 <p>"Looking for an organization that thinks outside the box and comes up with 
@@ -355,8 +356,8 @@
 
         <div class="eight__section--content2">
             <div class="eight__section--content2-1">
-                <h1>What do we do at Baftha? <span><i id="showAns" class="fa-solid fa-angle-down"></i></span></h1>
-                <div id="faqAns">
+                <h1>What do we do at Baftha? <span class="togg"><i id="showAns" class="fa-solid fa-angle-down"></i></span></h1>
+                <div id="faqAns" class="hide">
                     <p>We are a consultation company that provides qualify engineering solutions, innovations impact
                         services and comprehensive general contracting expertise. We go above and beyond to meet client
                         needs by blending technical excellence with a focus on your satisfaction, ensuring sustainable 
@@ -367,8 +368,8 @@
             </div>
 
             <div class="eight__section--content2-1">
-                <h1>Why Choose Baftha? <span><i id="showAnss" class="fa-solid fa-angle-down"></i></span></h1>
-                <div id="faqAnss">
+                <h1>Why Choose Baftha? <span class="togg"><i id="showAnss" class="fa-solid fa-angle-down"></i></span></h1>
+                <div id="faqAnss" class="hide">
                     <p>We are a team of innovators, creators, and strategists dedicated to pushing
                         boundaries and redefining possibilities
                     </p>
@@ -376,10 +377,9 @@
             </div>
 
             <div class="eight__section--content2-1">
-                <h1>Where exactly is Baftha located? <span><i id="showAnz" class="fa-solid fa-angle-down"></i></span></h1>
-                <div id="faqAnz">
-                    <p>Lagos, Nigeria
-                    </p>
+                <h1>Where exactly is Baftha located? <span><i id="showAnz" class="fa-solid fa-angle-down togg"></i></span></h1>
+                <div id="faqAnz" class="hide">
+                    <p>Lagos, Nigeria</p>
                 </div>
             </div>
         </div>
@@ -389,8 +389,8 @@
     <section class="fifth__section">
         <h1>Transforming Ideas into <span>Experiences:</span>; Where Innovation Meets Creativity</h1>
         <div>
-            <a href="#">Get In Touch</a>
-         </div>
+            <a href="#form">Get In Touch</a>
+        </div>
     </section>
 
 
@@ -418,28 +418,29 @@
                 <h1>Contact Us</h1>
 
                 <div class="nine__section--content2-formCon">
-                    <div class="nine__section--content2-form">
-                        <h3>Full Name</h3>
-                        <input type="text" name="fullname" id="fullname">
-                    </div>
-                    <div class="nine__section--content2-form">
-                        <h3>Email Address</h3>
-                        <input type="email" name="email" id="email">
-                    </div>
-    
-                    <div class="nine__section--content2-form">
-                        <h3>Subject</h3>
-                        <input type="text" name="subject" id="subject">
-                    </div>
-    
-                    <div class="nine__section--content2-form">
-                        <h3>Message</h3>
-                        <textarea name="message" id="message" cols="20" rows="10"></textarea>
-                    </div>
-                </div>
-                
-                <div class="nine__section--content2--send">
-                    <a href="#">Send Message</a>
+                    <form action="" id="form">
+                        <p class="error-message"></p>
+                        <div class="nine__section--content2-form">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" name="fullname" id="fullname" placeholder="Full Name">
+                        </div>
+                        <div class="nine__section--content2-form">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="Email Address">
+                        </div>
+        
+                        <div class="nine__section--content2-form">
+                            <label for="subject">Subject</label>
+                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                        </div>
+        
+                        <div class="nine__section--content2-form">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" cols="20" rows="10" placeholder="Optional"></textarea>
+                        </div>
+
+                        <button type="submit">submit</button>
+                    </form>
                 </div>
         </div>
     </section>
@@ -502,13 +503,9 @@
             <h3> &#169; 2024 Baftha</h3>
             <a href="#">Privacy Policy</a>
         </div>
-
     </footer>
-
     <script src="script.js"></script>
 </body>
-
-
 </html>
 
 
