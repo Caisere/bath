@@ -819,7 +819,7 @@ body {
   @media (max-width: 600px) {
     .fifth__section {
       padding: 2.5rem 7rem;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
       gap: 1.5rem; } }
   @media (max-width: 56.25em) {
     .fifth__section {
@@ -1410,14 +1410,7 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        margin-top: 70px !important; } }
-    @media (max-width: 56.25em) {
-      .nine__section--content3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-top: -60px; } }
+        margin-top: 70px; } }
     .nine__section--content3 h1 {
       font-size: 2.5rem;
       color: #011836; }
@@ -1448,6 +1441,9 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 600px) {
+    .footer {
+      margin-top: 70px; } }
   .footer__section1 {
     display: flex;
     justify-content: space-between;

@@ -1212,7 +1212,7 @@ body {
     @include respond(phone) {
         padding: $default-padding-phone;
         //margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         gap: 1.5rem;
     }
 
@@ -1589,7 +1589,6 @@ body {
                 margin: 15px 0;
             }
 
-             
             h1, p {
                 background-color: transparent;
             }
@@ -2087,16 +2086,16 @@ body {
             flex-direction: column;
             align-items: center;
             gap: 1rem;
-            margin-top: 70px !important;
+            margin-top: 70px;
         }
 
-        @include respond(tab-port) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            margin-top: -60px;
-        }
+        // @include respond(tab-port) {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     gap: 1rem;
+        //     margin-top: -60px;
+        // }
 
         h1 {
             font-size: 2.5rem;
@@ -2138,6 +2137,10 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    @include respond(phone) {
+        margin-top: 70px;
+    }
 
     &__section1 {
         display: flex;
